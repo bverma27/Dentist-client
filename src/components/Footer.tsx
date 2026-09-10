@@ -3,7 +3,7 @@ import { clinicConfig } from "@/config/clinic";
 import { Shield, Phone, MessageSquare } from "lucide-react";
 
 export default function Footer() {
-  const { brand, dentist, location, contact } = clinicConfig;
+  const { brand, dentist, contact, schedule } = clinicConfig;
 
   return (
     <footer className="bg-[#12211C] text-[#E4EBE6] pt-16 pb-24 sm:pb-16 border-t border-[#182B24]">
@@ -24,30 +24,17 @@ export default function Footer() {
             <div className="pt-2 flex items-start gap-2.5 text-xs text-[#B8965E]">
               <Shield className="w-4 h-4 shrink-0 mt-0.5" />
               <div>
-                <strong className="block text-white font-medium">
-                  {dentist.name} · {dentist.qualifications}
-                </strong>
-                <span className="text-[#E4EBE6]/70">
-                  {dentist.registrationNumber}
-                </span>
+                <strong className="block text-white font-medium">{dentist.name}</strong>
+                <span className="text-[#E4EBE6]/70">{dentist.qualifications} · {dentist.title}</span>
               </div>
             </div>
           </div>
 
           {/* Location & Contact (4 cols) */}
           <div className="lg:col-span-4 space-y-3 text-xs">
-            <span className="text-xs font-semibold text-[#B8965E] uppercase tracking-wider block">
-              Practice Location
-            </span>
-            <p className="text-white font-medium">
-              {location.premiseName}
-            </p>
-            <p className="text-[#E4EBE6]/75">
-              {location.streetAddress}, {location.sectorArea}, {location.city}, {location.state} – {location.postalCode}
-            </p>
-            <p className="text-[#E4EBE6]/75">
-              Near {location.landmark} ({location.metroStationNearby})
-            </p>
+            <span className="text-xs font-semibold text-[#B8965E] uppercase tracking-wider block">Clinic Hours</span>
+            <p className="text-white font-medium">{schedule.weekdays.hours}</p>
+            <p className="text-[#E4EBE6]/75">{schedule.weekend.hours}</p>
 
             <div className="pt-2 space-y-1.5">
               <a
@@ -91,13 +78,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#reviews" className="hover:text-white transition-colors">
-                  Verified Patient Reviews
-                </a>
-              </li>
-              <li>
                 <a href="#location" className="hover:text-white transition-colors">
-                  Location & Map Directions
+                  Clinic Hours & Contact
                 </a>
               </li>
               <li>
@@ -119,7 +101,7 @@ export default function Footer() {
           </p>
 
           <p className="shrink-0">
-            © {new Date().getFullYear()} {brand.clinicName}. Sector 15, Faridabad.
+            © {new Date().getFullYear()} {brand.clinicName}.             Contact the clinic for appointment details.
           </p>
         </div>
 

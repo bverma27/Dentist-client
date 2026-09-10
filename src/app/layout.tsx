@@ -18,15 +18,12 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: `${clinicConfig.brand.clinicName} | Faridabad Dental Care`,
+  title: clinicConfig.brand.clinicName,
   description: clinicConfig.brand.shortDescription,
   keywords: [
-    "Dentist in Faridabad",
-    "Dental Clinic Sector 15 Faridabad",
-    "Root Canal Treatment Faridabad",
-    "Dental Implants Faridabad",
-    "Painless Dentistry NCR",
-    "Clear Aligners Faridabad",
+    "Periodontist",
+    "Oral Implantologist",
+    "Dental Care",
   ],
 };
 

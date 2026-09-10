@@ -16,11 +16,10 @@ export default function PatientExperience() {
             The Patient Journey
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-[#182B24] tracking-tight mb-4">
-            What happens when you visit us in Sector 15.
+            What to expect from your consultation.
           </h2>
           <p className="text-base text-[#5F6F69]">
-            We know dental anxiety is real. Here is the chronological sequence of our care, 
-            so there are no surprises from the moment you step through our door.
+            Your consultation begins with a discussion of your concerns and suitable treatment options.
           </p>
         </div>
 
@@ -65,7 +64,7 @@ export default function PatientExperience() {
             <div className="relative aspect-[16/10] w-full rounded overflow-hidden bg-[#E4EBE6]">
               <Image
                 src={images.consultationRoom}
-                alt="Unhurried consultation desk in Sector 15 Faridabad"
+                alt="Dental consultation room"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
@@ -85,7 +84,7 @@ export default function PatientExperience() {
             <div className="relative aspect-[16/10] w-full rounded overflow-hidden bg-[#E4EBE6]">
               <Image
                 src={images.sterilizationStation}
-                alt="Hospital grade sterilization station"
+                alt="Dental care environment"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
@@ -93,10 +92,10 @@ export default function PatientExperience() {
             </div>
             <div className="p-3">
               <strong className="text-xs font-semibold text-[#182B24] block">
-                Class-B Autoclave Protocol
+                A considered approach to care
               </strong>
               <p className="text-xs text-[#5F6F69] mt-0.5">
-                All handpieces and diagnostic instruments are steam-sterilized and unsealed in your presence.
+                Treatment discussions are tailored to your dental concerns and goals.
               </p>
             </div>
           </div>

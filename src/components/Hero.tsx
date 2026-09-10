@@ -1,10 +1,9 @@
 import React from "react";
-import Image from "next/image";
 import { clinicConfig } from "@/config/clinic";
-import { Calendar, MessageSquare, Phone, MapPin, CheckCircle2 } from "lucide-react";
+import { Calendar, MessageSquare, Phone, CheckCircle2 } from "lucide-react";
 
 export default function Hero() {
-  const { brand, contact, location, schedule, images, dentist } = clinicConfig;
+  const { brand, contact, schedule, dentist } = clinicConfig;
 
   return (
     <section className="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 border-b border-[#D8E0DB]">
@@ -17,7 +16,7 @@ export default function Hero() {
             {/* Grounded Location Pill (No tracked-out all-caps chrome) */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E4EBE6] text-[#182B24] text-xs font-medium border border-[#CAD7CE] mb-6">
               <span className="w-2 h-2 rounded-full bg-[#8E6F3E]" />
-              <span>Independent Practice · {location.sectorArea}, {location.city}</span>
+              <span>Specialist dental care</span>
             </div>
 
             {/* Main Editorial Headline */}
@@ -27,9 +26,7 @@ export default function Hero() {
 
             {/* Grounded Sub-paragraph */}
             <p className="text-base sm:text-lg text-[#5F6F69] leading-relaxed max-w-2xl mb-8">
-              Led by {dentist.name} ({dentist.qualifications}). We provide deliberate, 
-              pain-managed dental care using digital diagnostics, transparent treatment planning, 
-              and hospital-grade sterilization. No rushed appointments.
+              Led by {dentist.name} ({dentist.qualifications}), {dentist.title.toLowerCase()}.
             </p>
 
             {/* Primary Action Buttons */}
@@ -68,51 +65,33 @@ export default function Hero() {
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#8E6F3E] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="font-semibold block text-[#182B24]">Single-Sitting RCT</strong>
-                  <span className="text-[#5F6F69]">Painless rotary endodontics</span>
+                  <strong className="font-semibold block text-[#182B24]">Periodontics</strong>
+                  <span className="text-[#5F6F69]">Focused gum care</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#8E6F3E] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="font-semibold block text-[#182B24]">Digital Low-Dose X-Ray</strong>
-                  <span className="text-[#5F6F69]">Chairside instant display</span>
+                  <strong className="font-semibold block text-[#182B24]">Oral Implantology</strong>
+                  <span className="text-[#5F6F69]">Implant consultations</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#8E6F3E] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="font-semibold block text-[#182B24]">Written Price Clarity</strong>
-                  <span className="text-[#5F6F69]">Clear estimate before starting</span>
+                  <strong className="font-semibold block text-[#182B24]">Qualified Doctor</strong>
+                  <span className="text-[#5F6F69]">BDS, MDS</span>
                 </div>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Architectural Operatory Photo + Practical Visiting Card (5 cols) */}
-          <div className="lg:col-span-5">
-            <div className="bg-white border border-[#D8E0DB] rounded-lg overflow-hidden shadow-xs">
-              
-              {/* Authentic Clinic Operatory Photography */}
-              <div className="relative aspect-[4/3] w-full bg-[#E4EBE6]">
-                <Image
-                  src={images.heroOperatory}
-                  alt={`${brand.clinicName} operatory chair in Sector 15 Faridabad`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute top-3 right-3 bg-[#182B24]/85 backdrop-blur-xs text-white text-[11px] px-2.5 py-1 rounded">
-                  Surgery Operatory · Sector 15
-                </div>
-              </div>
-
-              {/* Practical Clinic Quick Card */}
-              <div className="p-6 bg-white space-y-4">
+          {/* Right Column: Practical Visiting Card */}
+          <div className="lg:col-span-5 lg:pt-12">
+            <div className="bg-white border border-[#D8E0DB] rounded-lg p-6 shadow-xs">
                 
                 {/* Daily Schedule & Status */}
                 <div className="flex items-start justify-between pb-4 border-b border-[#E4EBE6]">
@@ -133,35 +112,6 @@ export default function Hero() {
                     Open Today
                   </span>
                 </div>
-
-                {/* Exact Sector Proximity & Map Action */}
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-[#8E6F3E] shrink-0 mt-0.5" />
-                  <div className="text-xs leading-relaxed text-[#5F6F69]">
-                    <strong className="block text-sm font-semibold text-[#182B24]">
-                      {location.premiseName}
-                    </strong>
-                    {location.streetAddress}, {location.sectorArea}, {location.city}
-                    <div className="mt-1 text-[#8E6F3E] font-medium">
-                      Landmark: {location.landmark}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Fast Directions Button */}
-                <div className="pt-2">
-                  <a
-                    href={location.googleMapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-[#F8F7F4] hover:bg-[#E4EBE6] border border-[#D8E0DB] text-xs font-semibold text-[#182B24] rounded transition-colors"
-                  >
-                    <MapPin className="w-3.5 h-3.5 text-[#8E6F3E]" />
-                    <span>Get Directions via Google Maps</span>
-                  </a>
-                </div>
-
-              </div>
 
             </div>
           </div>

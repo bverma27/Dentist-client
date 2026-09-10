@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { clinicConfig } from "@/config/clinic";
-import { Phone, MessageSquare, Calendar, MapPin, Menu, X, Clock } from "lucide-react";
+import { Phone, MessageSquare, Calendar, Menu, X, Clock } from "lucide-react";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { brand, contact, location } = clinicConfig;
+  const { brand, contact, schedule } = clinicConfig;
 
   return (
     <header className="sticky top-0 z-40 bg-[#F8F7F4]/95 backdrop-blur-sm border-b border-[#D8E0DB]">
@@ -16,13 +16,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 font-medium text-white/90">
-              <MapPin className="w-3.5 h-3.5 text-[#B8965E]" />
-              {location.sectorArea}, {location.city}
-            </span>
-            <span className="text-white/40">|</span>
-            <span className="flex items-center gap-1.5 text-white/80">
               <Clock className="w-3.5 h-3.5 text-[#B8965E]" />
-              Mon–Sat: 10:00 AM – 1:30 PM & 4:30 PM – 8:00 PM
+              {schedule.weekdays.hours} · {schedule.weekend.hours}
             </span>
           </div>
 
@@ -59,7 +54,7 @@ export default function Navbar() {
               {brand.clinicName}
             </span>
             <span className="text-xs text-[#5F6F69] tracking-wider uppercase">
-              {clinicConfig.dentist.title} · {location.sectorArea}
+              {clinicConfig.dentist.title}
             </span>
           </Link>
 
@@ -82,12 +77,6 @@ export default function Navbar() {
               className="hover:text-[#182B24] transition-colors py-1 hover:border-b-2 hover:border-[#8E6F3E]"
             >
               Patient Care
-            </a>
-            <a
-              href="#reviews"
-              className="hover:text-[#182B24] transition-colors py-1 hover:border-b-2 hover:border-[#8E6F3E]"
-            >
-              Reviews
             </a>
             <a
               href="#location"
@@ -158,13 +147,6 @@ export default function Navbar() {
               className="py-1 border-b border-[#E4EBE6]"
             >
               What to Expect
-            </a>
-            <a
-              href="#reviews"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-1 border-b border-[#E4EBE6]"
-            >
-              Patient Reviews
             </a>
             <a
               href="#location"

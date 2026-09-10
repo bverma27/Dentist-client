@@ -1,9 +1,9 @@
 import React from "react";
 import { clinicConfig } from "@/config/clinic";
-import { Phone, MessageSquare, Calendar, MapPin } from "lucide-react";
+import { Phone, MessageSquare, Calendar } from "lucide-react";
 
 export default function MobileQuickBar() {
-  const { contact, location } = clinicConfig;
+  const { contact } = clinicConfig;
 
   return (
     <div className="fixed bottom-0 inset-x-0 z-50 sm:hidden bg-white/95 backdrop-blur-md border-t border-[#D8E0DB] px-3 py-2.5 shadow-lg">
@@ -33,22 +33,10 @@ export default function MobileQuickBar() {
           <span className="text-[10px] font-semibold">WhatsApp</span>
         </a>
 
-        {/* Directions */}
-        <a
-          href={location.googleMapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center py-1 text-[#182B24] hover:text-[#8E6F3E] transition-colors"
-          aria-label="Directions in Google Maps"
-        >
-          <MapPin className="w-5 h-5 mb-1 text-[#182B24]" />
-          <span className="text-[10px] font-semibold">Directions</span>
-        </a>
-
         {/* Book */}
         <a
           href="#booking"
-          className="flex flex-col items-center justify-center py-1 bg-[#182B24] text-white rounded transition-colors"
+          className="col-span-2 flex flex-col items-center justify-center py-1 bg-[#182B24] text-white rounded transition-colors"
           aria-label="Book appointment"
         >
           <Calendar className="w-5 h-5 mb-1 text-[#B8965E]" />

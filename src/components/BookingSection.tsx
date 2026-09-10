@@ -24,7 +24,7 @@ export default function BookingSection() {
   };
 
   const whatsappInquiryUrl = `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
-    `Hello Dr. Sharma, I would like to request an appointment for: ${formData.fullName || "a patient"} (${formData.visitReason}, ${formData.preferredSlot}).`
+    `Hello Vidya Dental Care, I would like to request an appointment for: ${formData.fullName || "a patient"} (${formData.visitReason}, ${formData.preferredSlot}).`
   )}`;
 
   return (
@@ -44,7 +44,7 @@ export default function BookingSection() {
               </h2>
               <p className="text-sm sm:text-base text-[#5F6F69] leading-relaxed mb-8">
                 To respect every patient’s schedule and prevent crowded waiting areas, 
-                Dr. Sharma sees patients exclusively by appointment in Sector 15.
+                Appointments are available during the morning and evening clinic hours.
               </p>
 
               {/* Direct WhatsApp Alternative Banner */}

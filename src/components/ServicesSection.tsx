@@ -125,7 +125,7 @@ export default function ServicesSection() {
               In severe pain or dealing with a broken tooth?
             </strong>
             <p className="text-xs text-[#5F6F69] mt-0.5">
-              We reserve dedicated emergency slots daily for acute toothache and trauma in Sector 15.
+              Please call the clinic to discuss appointment availability.
             </p>
           </div>
 

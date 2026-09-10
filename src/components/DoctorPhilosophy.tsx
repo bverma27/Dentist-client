@@ -1,10 +1,9 @@
 import React from "react";
-import Image from "next/image";
 import { clinicConfig } from "@/config/clinic";
-import { MessageSquare, Check, Shield } from "lucide-react";
+import { MessageSquare, Check } from "lucide-react";
 
 export default function DoctorPhilosophy() {
-  const { dentist, contact, location } = clinicConfig;
+  const { dentist, contact } = clinicConfig;
 
   return (
     <section id="philosophy" className="py-20 lg:py-28 bg-[#F8F7F4] border-b border-[#D8E0DB]">
@@ -22,41 +21,8 @@ export default function DoctorPhilosophy() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           
-          {/* Left: Doctor Portrait & Official Registration Badge (5 cols) */}
-          <div className="lg:col-span-5">
-            <div className="border border-[#D8E0DB] bg-white rounded-lg p-3 shadow-xs">
-              <div className="relative aspect-[4/5] w-full rounded overflow-hidden bg-[#E4EBE6]">
-                <Image
-                  src={dentist.portraitImage}
-                  alt={`Portrait of ${dentist.name}`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 35vw"
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Registration & Credentials Footnote */}
-              <div className="p-4 bg-white border-t border-[#E4EBE6] mt-3">
-                <div className="flex items-start gap-3">
-                  <Shield className="w-4 h-4 text-[#8E6F3E] shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs font-semibold text-[#182B24] block">
-                      Licensed & Registered Dental Surgeon
-                    </span>
-                    <p className="text-xs text-[#5F6F69] mt-0.5">
-                      {dentist.registrationNumber}
-                    </p>
-                    <p className="text-xs text-[#5F6F69]">
-                      Registered with State Dental Council · Practicing in {location.city}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right: Editorial Narrative & Specialty Areas (7 cols) */}
-          <div className="lg:col-span-7 flex flex-col space-y-6">
+          {/* Editorial Narrative & Specialty Areas */}
+          <div className="lg:col-span-12 flex flex-col space-y-6">
             
             {/* Identity Bar */}
             <div className="pb-6 border-b border-[#D8E0DB]">
@@ -83,7 +49,7 @@ export default function DoctorPhilosophy() {
             {/* Core Clinical Focus Areas */}
             <div className="pt-6">
               <span className="text-xs font-semibold text-[#182B24] uppercase tracking-wider block mb-4">
-                Primary Clinical Focus in Sector 15
+                Primary Clinical Focus
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {dentist.specialtyFocus.map((specialty) => (
@@ -102,7 +68,7 @@ export default function DoctorPhilosophy() {
             <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <a
                 href={`https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
-                  `Hello Dr. Sharma, I have a question regarding a dental concern.`
+                  `Hello Vidya Dental Care, I have a question regarding a dental concern.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

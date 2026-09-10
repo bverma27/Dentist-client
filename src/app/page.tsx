@@ -5,7 +5,6 @@ import TrustStrip from "@/components/TrustStrip";
 import DoctorPhilosophy from "@/components/DoctorPhilosophy";
 import ServicesSection from "@/components/ServicesSection";
 import PatientExperience from "@/components/PatientExperience";
-import ReviewsSection from "@/components/ReviewsSection";
 import LocationHours from "@/components/LocationHours";
 import BookingSection from "@/components/BookingSection";
 import Footer from "@/components/Footer";
@@ -24,7 +23,7 @@ export default function Home() {
         {/* 2. Trust Badges: Class-B Autoclave, Low-Radiation Sensors, Price Transparency */}
         <TrustStrip />
 
-        {/* 3. Doctor & Philosophy: Dr. Vikram Sharma, Qualifications, Unhurried Diagnosis */}
+        {/* 3. Doctor & Philosophy */}
         <DoctorPhilosophy />
 
         {/* 4. Treatments Catalog: Indications, Duration, and Conservative Restorations */}
@@ -33,13 +32,10 @@ export default function Home() {
         {/* 5. Patient Experience: 4 Sequential Steps From Arrival to WhatsApp Follow-up */}
         <PatientExperience />
 
-        {/* 6. Genuine Reviews: Verifiable Google Reviews from Faridabad Patients */}
-        <ReviewsSection />
-
-        {/* 7. Location & Accessibility: Sector 15 Faridabad, Parking, Metro, Timings & Map */}
+        {/* 6. Clinic Hours */}
         <LocationHours />
 
-        {/* 8. Booking Section: Low-Friction Appointment Request & Instant WhatsApp */}
+        {/* 7. Booking Section */}
         <BookingSection />
       </main>
 
